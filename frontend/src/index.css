@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #7e92e9 0%, #751769 100%);
+  color: #25233a;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+main {
+  width: min(100%, 440px);
+  padding: 32px;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 94%);
+  box-shadow: 0 20px 60px rgb(36 20 72 / 25%);
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+}
+
+label {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  color: #45415c;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #d7d3e5;
+  border-radius: 10px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input:focus {
+  border-color: #7956c9;
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(121 86 201 / 18%);
+}
+
+form span {
+  color: #68647a;
+  font-weight: 600;
+}
+
+button {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #7049bd;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #5d37a7;
+}
+
+button:focus-visible {
+  outline: 3px solid rgb(112 73 189 / 35%);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+main > p[role="alert"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 16px 0 0;
+  color: #b42318;
+}
+
+main > div {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f4f0fc;
+  text-align: left;
+}
+
+main > div p {
+  margin: 8px 0;
+  color: #45415c;
+}
+
+main > div p:last-child {
+  margin-bottom: 0;
+  color: #5d37a7;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+
+  main {
+    padding: 24px 20px;
+  }
+}
